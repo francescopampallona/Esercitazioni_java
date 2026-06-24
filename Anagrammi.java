@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main{
 	
-	public static boolean arePalindrome(String p1, String p2){
+	public static boolean isAnagram(String p1, String p2){
 		HashMap<Character, Integer> occorrenze= new HashMap<>();
 		for(char c: p1.toCharArray()){
 			if(occorrenze.containsKey(c)){
@@ -35,10 +35,10 @@ public class Main{
 		String p1 = scanner.nextLine();
 		System.out.println("Inserisci la seconda parola:");
 		String p2 = scanner.nextLine();
-		if(arePalindrome(p1,p2)){
-			System.out.println("Sono palindromi");
+		if(isAnagram(p1,p2)){
+			System.out.println("Sono anagrammi");
 		}else{
-			System.out.println("Non sono palindrome");
+			System.out.println("Non sono anagrammi");
 		}
 		
 	}
