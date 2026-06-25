@@ -28,7 +28,7 @@ interface AnagramChecker<T>{
     public boolean isAnagram(T o1, T o2);
 }
 
-class AnagramCheckerImpl implements AnagramChecker{
+class AnagramCheckerImpl implements AnagramChecker<MyObject>{
     
     private boolean isAnagram(String s1, String s2){
         HashMap<Character, Integer> occorrenze=new HashMap<>();
@@ -62,7 +62,7 @@ class AnagramCheckerImpl implements AnagramChecker{
 
 public class Main{
     public static void main(String[] args){
-        AnagramChecker checker = new AnagramCheckerImpl();
+        AnagramChecker<MyObject> checker = new AnagramCheckerImpl();
         
         if (!checker.isAnagram(new MyObject("TEATRO"), new MyObject("ATTORE"))) {
             throw new RuntimeException("Test fallito");
