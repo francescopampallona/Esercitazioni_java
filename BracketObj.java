@@ -54,7 +54,7 @@ class BracketValidatorImpl implements BracketValidator<BracketObj[]>{
             }
         
         }
-        return true;
+        return stack.isEmpty();
     }
 }
 
