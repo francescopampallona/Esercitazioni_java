@@ -24,14 +24,13 @@ class MyObject{
     }
 }
 
-interface AnagramChecker{
-    public boolean isAnagram(MyObject o1, MyObject o2);
-    public boolean isAnagram(String s1, String s2);
+interface AnagramChecker<T>{
+    public boolean isAnagram(T o1, T o2);
 }
 
 class AnagramCheckerImpl implements AnagramChecker{
     
-    public boolean isAnagram(String s1, String s2){
+    private boolean isAnagram(String s1, String s2){
         HashMap<Character, Integer> occorrenze=new HashMap<>();
         for(char c: s1.toCharArray()){
             if(occorrenze.containsKey(c)){
@@ -65,7 +64,7 @@ public class Main{
     public static void main(String[] args){
         AnagramChecker checker = new AnagramCheckerImpl();
         
-        if (!checker.isAnagram("TEATRO", "ATTORE")) {
+        if (!checker.isAnagram(new MyObject("TEATRO"), new MyObject("ATTORE"))) {
             throw new RuntimeException("Test fallito");
         }
         
